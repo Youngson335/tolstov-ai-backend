@@ -10,7 +10,7 @@
     {
       "src": "/api/chat",
       "dest": "api/server.js",
-      "methods": ["POST"]
+      "methods": ["POST", "OPTIONS"]
     }
   ]
 }

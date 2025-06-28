@@ -11,7 +11,28 @@ const httpsAgent = new https.Agent({
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://tolstov-ai.vercel.app",
+];
+
+app.options(
+  "/api/chat",
+  cors({
+    origin: allowedOrigins,
+    methods: ["POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 const CLIENT_ID = "2087ba9d-220d-497e-91b1-0f0935277d28";
