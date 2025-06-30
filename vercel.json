@@ -12,5 +12,6 @@
       "dest": "api/server.js",
       "methods": ["POST", "OPTIONS"]
     }
-  ]
+  ],
+  "kv": true
 }
