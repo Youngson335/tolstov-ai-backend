@@ -1,19 +1,18 @@
-const express = require("express");
-const router = express.Router();
-const chatController = require("../controllers/chatController.js");
-const { cors } = require("../config");
+import express from "express";
+import chatController from "../controllers/chatController.js";
 
-// Настройка CORS для конкретного маршрута
+const router = express.Router();
+
 router.options("/chat", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", cors.allowedOrigins.join(","));
-  res.setHeader("Access-Control-Allow-Methods", cors.options.methods.join(","));
-  res.setHeader(
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,POST,OPTIONS,PUT,DELETE");
+  res.header(
     "Access-Control-Allow-Headers",
-    cors.options.allowedHeaders.join(",")
+    "Content-Type, Authorization, X-Requested-With"
   );
-  res.status(200).end();
+  res.status(200).send();
 });
 
 router.post("/chat", chatController.processMessage);
 
-module.exports = router;
+export default router;

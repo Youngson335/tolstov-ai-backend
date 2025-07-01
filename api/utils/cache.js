@@ -3,7 +3,7 @@ let tokenCache = {
   expiresAt: null,
 };
 
-module.exports = {
+const cache = {
   setToken(token, expiresIn = 25 * 60 * 1000) {
     tokenCache = {
       accessToken: token,
@@ -23,3 +23,5 @@ module.exports = {
     };
   },
 };
+
+export default cache;

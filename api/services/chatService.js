@@ -1,11 +1,12 @@
-const axios = require("axios");
-const { gigachat } = require("../config");
-const authService = require("./authService");
+import axios from "axios";
+import gigachat from "../config/gigachat.js";
+import authService from "./authService.js";
+import httpsAgent from "../config/httpsAgent.js";
 
 class ChatService {
   constructor() {
     this.axiosInstance = axios.create({
-      httpsAgent: require("../config/httpsAgent"),
+      httpsAgent,
     });
   }
 
@@ -36,4 +37,4 @@ class ChatService {
   }
 }
 
-module.exports = new ChatService();
+export default new ChatService();

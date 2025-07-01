@@ -1,6 +1,6 @@
-const { randomUUID } = require("crypto");
+import { randomUUID } from "crypto";
 
-module.exports = {
+const gigachat = {
   clientId:
     process.env.GIGACHAT_CLIENT_ID || "2087ba9d-220d-497e-91b1-0f0935277d28",
   clientSecret:
@@ -18,3 +18,5 @@ module.exports = {
     return randomUUID();
   },
 };
+
+export default gigachat;

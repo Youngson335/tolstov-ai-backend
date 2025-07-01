@@ -1,4 +1,4 @@
-const chatService = require("../services/chatService");
+import chatService from "../services/chatService.js";
 
 class ChatController {
   async processMessage(req, res, next) {
@@ -16,4 +16,4 @@ class ChatController {
   }
 }
 
-module.exports = new ChatController();
+export default new ChatController();

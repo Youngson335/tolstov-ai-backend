@@ -1,5 +1,7 @@
-const https = require("https");
+import https from "https";
 
-module.exports = new https.Agent({
+const httpsAgent = new https.Agent({
   rejectUnauthorized: false,
 });
+
+export default httpsAgent;
