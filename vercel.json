@@ -1,17 +1,12 @@
 {
-  "version": 2,
-  "builds": [
+  "headers": [
     {
-      "src": "api/server.js",
-      "use": "@vercel/node"
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,POST,OPTIONS,PUT,DELETE" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization, X-Requested-With" }
+      ]
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/chat",
-      "dest": "api/server.js",
-      "methods": ["POST", "OPTIONS"]
-    }
-  ],
-  "kv": true
+  ]
 }
