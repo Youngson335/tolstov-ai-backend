@@ -7,18 +7,14 @@ import errorHandler from "./middlewares/errorHandler.js";
 
 const app = express();
 
-// Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
-// Маршруты
 app.use("/api", router);
 
-// Обработчик ошибок
 app.use(errorHandler);
 
-// Запуск сервера
 app.listen(config.app.port, () => {
   console.log(`Server running on http://localhost:${config.app.port}`);
 });

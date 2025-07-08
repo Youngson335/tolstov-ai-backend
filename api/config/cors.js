@@ -4,7 +4,7 @@ const corsOptions = {
     "https://tolstov-ai.vercel.app",
     "https://tolstov-ai-dev.vercel.app",
   ],
-  methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
+  methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
   credentials: true,
   optionsSuccessStatus: 200,
