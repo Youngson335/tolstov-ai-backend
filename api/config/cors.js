@@ -1,6 +1,7 @@
 const corsOptions = {
   origin: [
     "http://localhost:5173",
+    "http://localhost:3000",
     "https://tolstov-ai.vercel.app",
     "https://tolstov-ai-dev.vercel.app",
     "https://habit-tracker-frontend-dev.vercel.app",
